@@ -26,12 +26,10 @@ body {
   color: var(--cream);
   background:
     radial-gradient(1200px 600px at 10% -10%, #6b2d7b 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, # generoz 0%, transparent 50%),
+    radial-gradient(900px 500px at 100% 0%, #5a2a6e 0%, transparent 50%),
     linear-gradient(160deg, var(--bg1), var(--bg2) 55%, #120814);
   overflow-x: hidden;
 }
-
-/* fix typo in gradient - will rewrite properly */
 
 .bg-glow {
   position: fixed;
