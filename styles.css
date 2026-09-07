@@ -1,0 +1,263 @@
+:root {
+  --bg1: #1a0b1f;
+  --bg2: #3a1644;
+  --pink: #ff7eb9;
+  --rose: #ff4d8d;
+  --lilac: #c9a7ff;
+  --cream: #fff5fb;
+  --card: rgba(255, 245, 251, 0.12);
+  --stroke: rgba(255, 255, 255, 0.18);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  color: var(--cream);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #6b2d7b 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, # generoz 0%, transparent 50%),
+    linear-gradient(160deg, var(--bg1), var(--bg2) 55%, #120814);
+  overflow-x: hidden;
+}
+
+/* fix typo in gradient - will rewrite properly */
+
+.bg-glow {
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 126, 185, 0.22), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(201, 167, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(255, 77, 141, 0.15), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+  animation: drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from { transform: translate3d(-1%, -1%, 0) scale(1); }
+  to { transform: translate3d(2%, 1%, 0) scale(1.05); }
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shell {
+  position: relative;
+  z-index: 2;
+  width: min(920px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 2.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--lilac);
+  margin: 0 0 0.75rem;
+}
+
+.hero h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3.4rem, 12vw, 5.8rem);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(120deg, #fff, var(--pink), var(--lilac));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero h1 span {
+  display: inline-block;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.subtitle {
+  margin: 1rem 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.hinglish {
+  color: rgba(255, 245, 251, 0.78);
+  font-style: italic;
+  margin: 0.25rem 0 1.5rem;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font: inherit;
+  font-weight: 600;
+  color: #3a0d28;
+  background: linear-gradient(135deg, #ffd1e8, var(--pink) 45%, #ff9ec7);
+  box-shadow: 0 10px 30px rgba(255, 77, 141, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 34px rgba(255, 77, 141, 0.45);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-soft {
+  background: linear-gradient(135deg, #efe3ff, var(--lilac));
+  color: #2d1844;
+  box-shadow: 0 10px 30px rgba(201, 167, 255, 0.28);
+}
+
+.surprise {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.surprise.hidden {
+  display: none;
+}
+
+.love-note,
+.final {
+  padding: 1.6rem 1.4rem;
+}
+
+.love-note h2,
+.section-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.love-note p {
+  margin: 0 0 0.85rem;
+  line-height: 1.65;
+  color: rgba(255, 245, 251, 0.9);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.reason {
+  padding: 1.1rem 1rem;
+}
+
+.reason .icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.reason h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.reason p {
+  margin: 0;
+  color: rgba(255, 245, 251, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.final {
+  text-align: center;
+}
+
+.big-love {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.4rem, 8vw, 3.8rem);
+  margin: 0.2rem 0 0.4rem;
+  background: linear-gradient(120deg, #fff, var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: rgba(255, 245, 251, 0.55);
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -2rem;
+  font-size: 1rem;
+  animation: rise linear forwards;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 10px rgba(255, 77, 141, 0.35));
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  100% {
+    transform: translateY(-110vh) scale(1.25) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(920px, calc(100% - 1.25rem));
+    padding-top: 2rem;
+  }
+
+  .hero {
+    padding: 2.2rem 1.1rem 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
