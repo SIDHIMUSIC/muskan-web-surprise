@@ -1,11 +1,8 @@
 const heartsLayer = document.getElementById("hearts");
-const revealBtn = document.getElementById("revealBtn");
-const surprise = document.getElementById("surprise");
-const heartRainBtn = document.getElementById("heartRainBtn");
-
 const HEARTS = ["💗", "💕", "💖", "💓", "💞", "🌸", "✨"];
 
 function spawnHeart(x = Math.random() * 100, size = 0.8 + Math.random() * 1.4) {
+  if (!heartsLayer) return;
   const el = document.createElement("span");
   el.className = "floating-heart";
   el.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
@@ -22,18 +19,23 @@ function softRain(count = 18) {
   }
 }
 
-revealBtn.addEventListener("click", () => {
-  surprise.classList.remove("hidden");
-  revealBtn.textContent = "Surprise unlocked ✨";
-  revealBtn.disabled = true;
-  softRain(24);
-  surprise.scrollIntoView({ behavior: "smooth", block: "start" });
+const toggle = document.querySelector("[data-nav-toggle]");
+const links = document.querySelector("[data-nav-links]");
+if (toggle && links) {
+  toggle.addEventListener("click", () => links.classList.toggle("open"));
+}
+
+document.querySelectorAll(".reveal").forEach((el, i) => {
+  window.setTimeout(() => el.classList.add("in"), 80 + i * 70);
 });
 
-heartRainBtn.addEventListener("click", () => softRain(36));
-
-// gentle ambient hearts
 window.setInterval(() => {
   if (document.hidden) return;
   spawnHeart(Math.random() * 100, 0.7 + Math.random());
 }, 1400);
+
+const heartRainBtn = document.getElementById("heartRainBtn");
+if (heartRainBtn) {
+  heartRainBtn.addEventListener("click", () => softRain(36));
+  softRain(12);
+}

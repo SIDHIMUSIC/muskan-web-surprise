@@ -1,19 +1,16 @@
 # Muskan Web Surprise 💕
 
-A private, romantic static website surprise for **Muskan**.
+A private multi-page romantic surprise site for **Muskan**.
+
+## Pages
+1. `index.html` — Home
+2. `story.html` — Our story
+3. `reasons.html` — Reasons
+4. `moments.html` — Moments
+5. `letter.html` — Love letter
+6. `forever.html` — Forever / promise
 
 ## Open locally
+Open `index.html` in a browser. No build step.
 
-1. Clone or download this repo
-2. Open `index.html` in your browser  
-   (double-click, or drag into Chrome / Safari / Edge)
-
-No build step. No server required.
-
-## Files
-
-- `index.html` — surprise page
-- `styles.css` — soft pink/purple look + animations
-- `script.js` — reveal + floating hearts
-
-Made with care.
+Shared: `styles.css`, `script.js`
